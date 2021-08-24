@@ -18,7 +18,8 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: firstRender 0.7s ease-in;
+  animation: firstRender 0.7s ease-in forwards;
+  opacity: 0;
   @keyframes firstRender{
     from{
       transform: translateY(20px);
