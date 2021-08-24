@@ -19,7 +19,6 @@ function TripleContents (){
   const saveIncrementTime = 800/650*2;
   
   const intervalFunction =(max,incrementTime,setState)=>{
-    return ()=>{
       let start = 0;
       if(start===max) return;
       let timer = setInterval(()=>{
@@ -34,46 +33,11 @@ function TripleContents (){
           clearInterval(timer);
         } 
       },incrementTime);
-    }
   }
 
-  useEffect(intervalFunction(userMax,userIncrementTime,setUser),[userMax,userIncrementTime]);
-  useEffect(intervalFunction(reviewMax,reviewIncrementTime,setReview),[userMax,userIncrementTime]);
-  useEffect(intervalFunction(saveMax,saveIncrementTime,setSave),[userMax,userIncrementTime]);
-
-  // useEffect(()=>{
-  //   let start = 0;
-  //   if(start===reviewMax) return;
-  //   let timer = setInterval(()=>{
-  //     start += 1;
-  //     setReview(start);
-  //     if(start === reviewMax-2){
-  //       let slowTimer = setInterval(()=>{
-  //         start +=1;
-  //         setReview(start);
-  //         if(start === reviewMax) clearInterval(slowTimer)
-  //       },100)
-  //       clearInterval(timer);
-  //     }
-  //   },reviewIncrementTime);
-  // },[reviewMax,reviewIncrementTime])
-
-  // useEffect(()=>{
-  //   let start = 0;
-  //   if(start===saveMax) return;
-  //   let timer = setInterval(()=>{
-  //     start +=2;
-  //     setSave(start);
-  //     if(start === saveMax-4){
-  //       let slowTimer = setInterval(()=>{
-  //         start +=1;
-  //         setSave(start);
-  //         if(start === saveMax) clearInterval(slowTimer)
-  //       },100)
-  //       clearInterval(timer);
-  //     } 
-  //   },saveIncrementTime)
-  // },[saveMax,saveIncrementTime])
+  useEffect(()=>{intervalFunction(userMax,userIncrementTime,setUser)},[userMax,userIncrementTime]);
+  useEffect(()=>{intervalFunction(reviewMax,reviewIncrementTime,setReview)},[reviewMax,reviewIncrementTime]);
+  useEffect(()=>{intervalFunction(saveMax,saveIncrementTime,setSave)},[saveMax,saveIncrementTime]);
 
   return (
     <Wrap>
