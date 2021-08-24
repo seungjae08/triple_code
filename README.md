@@ -3,7 +3,7 @@
 - React
 - styled-components
 
-## 컴포넌트 설계 및 상태관리
+## 설계
 - App.js
 
 App.js에서 모든 jsx를 불러와 Rendering하는 방법을 선택했습니다.
@@ -25,3 +25,16 @@ Triple 이미지 하단에 2019년 2월 기준이라는 글자를 입혀야 했�
 해당 부분에서 100ms의 차이로 애니메이션을 입히기 위함도 있었습니다.
 숫자를 올리기 위해 React hooks를 사용했습니다.
 setInterval을 하기 위한 Function을 하나 만들어 줬고 이를 3개의 useEffect에 적용시켰습니다.
+
+## 디자인
+
+styled components를 사용해 Css를 적용시켰습니다.
+Animation은 css animation을 사용해 만들었습니다.
+Count가 올라가는 부분은 기존은 800ms에 해당 숫자(ex/ 유저=> 650)를 나눠서 ms를 나타냈습니다.
+마지막 4개의 숫자가 올라갈때는 카운트가 급격하게 느려지는 Animation을 추가하기 위해서 setInterval을
+100ms로 늘리는 setInterval을 추가시키고 기존 interval을 clear해줬습니다.
+
+기존 홈페이지에서 favicon을 가져와 사용했습니다. HTML Title Tag를 Triple로 바꿨습니다.
+
+기회를 주셔서 감사합니다
+
