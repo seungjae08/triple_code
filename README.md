@@ -1,8 +1,8 @@
 # triple_code
 ## 실행 방법
 
-cd triple
-yarn start
+- cd triple
+- yarn start
 
 ## 사용 기술 스택
 - React
